@@ -1,8 +1,8 @@
-FROM openjdk:8-alpine AS builder
+FROM openjdk:14-alpine AS builder
 COPY . /app
 WORKDIR /app
 RUN ./mvnw package
 
-FROM openjdk:8-alpine
+FROM openjdk:14-alpine
 COPY --from=builder /app/target /app
-CMD ["java -jar /app/*.jar"]  
+CMD ["java", "-jar", "/app/*.jar"]  
