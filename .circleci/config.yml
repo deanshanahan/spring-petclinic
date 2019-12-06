@@ -44,7 +44,7 @@ jobs:
       - run:
           name: Log into Google Cloud Registry
           command: |
-            echo "$GCR_PASS" | docker login -u oauth2accesstoken -p _json_key --password-stdin https://eu.gcr.io
+            echo "$GCR_PASS" | docker login -u _json_key --password-stdin https://eu.gcr.io
       - run:
           name: Push latest image to Google Cloud Registry
           command: |
